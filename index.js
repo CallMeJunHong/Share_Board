@@ -11,12 +11,12 @@ import boardRoutes from "./module/shareboard/route.js"; // Import the shareboard
 
 // Define the port on which the server will listen
 const PORT = process.env.PORT || 4200;
-const SOCKET_PORT = process.env.SOCKET_PORT || 4300;
 
 const app = express();
 const server = createServer(app); // Create an HTTP server using the Express app
 
 connectToDatabase();
+
 initSocket(server);
 
 // Use CORS middleware to allow cross-origin requests
