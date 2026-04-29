@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
+    "@tanstack/react-router": "^1.168.25",
+    "@tanstack/react-router-devtools": "^1.166.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.13.0",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tanstack/router-plugin": "^1.167.28",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
@@ -35,6 +38,7 @@
     "globals": "^17.5.0",
     "postcss": "^8.5.12",
     "tailwindcss": "^3.4.19",
+    "typescript": "^6.0.0-dev.20260416",
     "vite": "^8.0.10"
   }
 }
