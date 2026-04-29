@@ -14,8 +14,11 @@ function Index() {
     useEffect(() => {
         socket.connect();
 
-        socket.emit('join-room', 'test-123');
+        socket.on('connect', () => {
+            console.log('Connected:', socket.id);
 
+            socket.emit('join-room', 'test-123');
+        });
 
         socket.on('update-code', (newContent) => {
             setContent(newContent);
