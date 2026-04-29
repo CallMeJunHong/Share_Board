@@ -1,6 +1,7 @@
 // Import necessary modules
 import cors from "cors"; // Import CORS middleware to handle cross-origin requests
 import express from "express"; // Import Express for creating the API server
+import bodyParser from "body-parser"; // Import body-parser to parse incoming request bodies
 
 // Import the server from socket.js
 import server from "./lib/socket.js";
@@ -16,6 +17,7 @@ connnectToDatabase(); // Connect to the MongoDB database
 
 // Use CORS middleware to allow cross-origin requests
 app.use(cors());
+app.use(bodyParser.json()); // Enable JSON body
 
 // Define a simple route to check if the server is running
 app.get('/', (req, res) => {

@@ -11,6 +11,8 @@
   "author": "CallMeJunHong",
   "license": "ISC",
   "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^2.2.2",
     "express": "^5.2.1",
     "mongoose": "^9.5.0",
     "socket.io": "^4.8.3"
