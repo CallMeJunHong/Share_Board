@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 
+// Define the schema for the Board model
 const BoardSchema = new Schema(
     {
         roomId:{ type: String, required: true }, // Unique identifier for the board
