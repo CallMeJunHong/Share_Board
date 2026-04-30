@@ -3,7 +3,8 @@ import * as crypto from "node:crypto"; // Import crypto module for generating un
 import Board from "./schema.js"; // Import the Board model from schema.js
 
 // Controller function to create a new room (request & response)
-export const createRoom = async(req,res) => { 
+export const createRoom = async(req,res) => {
+
 
     try {
         const roomName = req.body.name; // Extract the room name from the request body
@@ -20,7 +21,7 @@ export const createRoom = async(req,res) => {
 
         const newBoard = await board.save(); // Save the new board to the database
 
-        return res.status(200).send('Room Created'); // Send the newly created board as a response
+        return res.status(201).send('Room Created'); // Send the newly created board as a response
     } catch (err) {
         return res.status(500).send('Error creating room');
     }
@@ -30,6 +31,7 @@ export const createRoom = async(req,res) => {
 
 // Controller function to get the list of all rooms
 export const getRoomList = async (req,res) => {
+
 
     try {
         const rooms = await Board.find().lean().exec(); // Fetch all rooms from the database
