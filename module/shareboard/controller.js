@@ -47,7 +47,7 @@ export const getRoomById = async (req,res) => {
 
     try {
         const id = req.params.id; 
-        const room = await Board.findById(id).lean().exec(); // Fetch the room by ID from the database
+        const room = await Board.findOne({roomId:id}).lean().exec(); // Fetch the room by ID from the database
 
         if(!room){
             return res.status(404).send('Room not found');
