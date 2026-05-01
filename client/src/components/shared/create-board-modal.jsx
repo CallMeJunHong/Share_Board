@@ -11,9 +11,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { axiosInstance } from "@/lib/axios-instance.js"
+import { useNavigate } from "@tanstack/react-router"
 import { useState } from "react"
 
 export function CreateBoardModal({ isOpen, onClose }) {
+
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
 
@@ -29,6 +32,7 @@ export function CreateBoardModal({ isOpen, onClose }) {
 
       if(status === 201) {
         onClose();
+        navigate({ to: "/" });
       }
 
     } catch (err) {
