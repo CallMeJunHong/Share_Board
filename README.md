@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Share Board 412
+=======
+# Share Board
+>>>>>>> c0df52a89411c07cafb0f8b2d5ea647ad212e471
 
 A real-time collaborative code sharing application that allows multiple users to create virtual boards and write code together in real-time.
 
@@ -147,10 +151,31 @@ Or use the default values (MongoDB runs on `localhost:27017`).
 2. You will be redirected to the board's room
 3. Start editing and see changes from others in real-time
 
+<<<<<<< HEAD
 ## 🙏 Acknowledgments
 
 This project was built following the tutorial from **Code With Ghazi** on YouTube. 
 Check out their channel for more amazing tutorials: [Code With Ghazi](https://www.youtube.com/@codewithghazi)
+=======
+## 🙏 Acknowledgements
+
+This project was built as part of my learning journey by following a tutorial from Code with Ghazi.
+
+* 📺 Tutorial: https://www.youtube.com/watch?v=ey1Bi6lI0Gg
+* 👨‍💻 Instructor: Code with Ghazi
+
+While the core structure was inspired by the tutorial, I implemented the project myself and gained hands-on experience with:
+
+* Real-time communication using Socket.IO
+* Built RESTful APIs with Express and MongoDB
+* Full-stack development with React and Node.js
+* Managing shared state across multiple users
+* Building and structuring scalable applications
+
+
+Additional improvements and customizations may be added over time to extend the original concept.
+
+>>>>>>> c0df52a89411c07cafb0f8b2d5ea647ad212e471
 
 ## 📝 License
 
