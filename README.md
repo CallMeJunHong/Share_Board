@@ -147,6 +147,11 @@ Or use the default values (MongoDB runs on `localhost:27017`).
 2. You will be redirected to the board's room
 3. Start editing and see changes from others in real-time
 
+## 🙏 Acknowledgments
+
+This project was built following the tutorial from **Code With Ghazi** on YouTube. 
+Check out their channel for more amazing tutorials: [Code With Ghazi](https://www.youtube.com/@codewithghazi)
+
 ## 📝 License
 
 ISC License - Copyright (c) 2024 CallMeJunHong
