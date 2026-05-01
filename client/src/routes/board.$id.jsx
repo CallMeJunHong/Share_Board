@@ -1,9 +1,9 @@
 import { getBoardById } from '@/common/services/index.js';
 import { CodeEditor } from '@/components/shared/code-editor.jsx';
-import { LanguageSelector } from '@/components/shared/language-selector.jsx';
 import socket from '@/lib/socket.js';
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
+import { Button } from '../components/ui/button';
 
 export const Route = createFileRoute('/board/$id')({
   component: Board,
@@ -15,7 +15,6 @@ function Board() {
     const board = Route.useLoaderData();
 
     const [content, setContent] = useState('');
-    const [selectedLanguage, setSelectedLanguage] = useState('javascript');
 
     useEffect(() => {
         socket.connect();
@@ -37,26 +36,17 @@ function Board() {
         };
     }, []);
 
-    const handleChange = (event) => {
-        const { value } = event.target;
+    const handleChange = (value) => {
         console.log(value);
         setContent(value);
         socket.emit('code-change', {roomId, content: value});
     };
 
 
-    const handleLanguageSelector = (language) => {
-        setSelectedLanguage(language);
-    }
     return (
-    <>
-        <h1>{board.name}</h1>
-
-        <LanguageSelector 
-            value={selectedLanguage}
-            onChange={handleLanguageSelector}/>
-
-        <CodeEditor language={selectedLanguage} value={content} onChange={handleChange}  />
-    </>
+    <div className='grid gap-5'>
+        <h2 className='text-2xl font-bold'>{board.roomName}</h2>
+        <CodeEditor value={content} onChange={handleChange}  />
+    </div>
     );
 }
