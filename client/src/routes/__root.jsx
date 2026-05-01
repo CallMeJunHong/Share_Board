@@ -8,7 +8,7 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  return <Outlet />;
+  return <main className='container p-5'><Outlet /></main>;
 }
 
 function NotFoundComponent() {

@@ -41,9 +41,9 @@ function Board() {
     <h2>Share Board</h2>
         <textarea
         value={content}
-        placeholder='Enter text here.'
+        placeholder='Start collaborating in this live editor.'
         rows={30}
-        cols={50}
+        cols={125}
         className='border p-4'
         onChange={handleChange}
         />

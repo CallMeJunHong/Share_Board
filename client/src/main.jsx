@@ -14,7 +14,9 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}>
-      <App />
+      <main className='container p-5'>
+        <App />
+      </main>
     </RouterProvider>
   </StrictMode>,
 )

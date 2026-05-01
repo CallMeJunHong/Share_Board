@@ -1,3 +1,5 @@
+import { useNavigate } from "@tanstack/react-router"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -6,13 +8,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { axiosInstance } from "@/lib/axios-instance.js"
-import { useNavigate } from "@tanstack/react-router"
-import { useState } from "react"
+
 
 export function CreateBoardModal({ isOpen, onClose }) {
 
@@ -42,32 +42,30 @@ export function CreateBoardModal({ isOpen, onClose }) {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-        {/* DialogTrigger is used to open the dialog when the button is clicked */}
-        <DialogTrigger asChild>
-          <Button variant="outline">Create Room</Button>
-        </DialogTrigger>
+<Dialog open={isOpen} onOpenChange={onClose}>
+  <DialogContent className="sm:max-w-sm  border shadow-lg rounded p-5 bg-white/90 backdrop-blur-sm">
+    <DialogHeader>
+      <DialogTitle className="text-black">Create Room</DialogTitle>
+    </DialogHeader>
 
-        <DialogContent className="sm:max-w-sm">
-          <DialogHeader>
-            <DialogTitle>Create Room</DialogTitle>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <Label htmlFor="name">Name</Label>
-            <Input 
-              id="name" 
-              value={name} 
-              onChange={handleNameChange} 
-              placeholder="Enter Room name" 
-              name="name" />
-          </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button type="button" variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button onClick={handleSubmit}>Save changes</Button>
-          </DialogFooter>
-        </DialogContent>
-    </Dialog>
+    <div className="grid gap-4 py-4">
+      <Label className="text-black" htmlFor="name">Name</Label>
+      <Input 
+        id="name" 
+        value={name} 
+        onChange={handleNameChange} 
+        placeholder="Enter Room name" 
+        name="name" 
+      />
+    </div>
+
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button >Cancel</Button>
+      </DialogClose>
+      <Button variant="outline" onClick={handleSubmit}>Save changes</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
   )
 }
