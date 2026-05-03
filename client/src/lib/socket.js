@@ -1,6 +1,7 @@
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:4200', {
+const backendUrl = import.meta.env.VITE_API_BASE || 'http://localhost:4200'; // Use environment variable for backend URL or fallback to localhost
+const socket = io(backendUrl, {
     autoConnect: false, 
     reconnectionDelayMax: 10000,
 });
